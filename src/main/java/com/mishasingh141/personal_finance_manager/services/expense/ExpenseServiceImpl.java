@@ -56,6 +56,16 @@ public class ExpenseServiceImpl implements ExpenseService{
         }
     }
 
+    public void deleteExpense(Long id){
+        Optional<Expense> optionalExpense = expenseRepository.findById(id);
+        if(optionalExpense.isPresent()){
+            expenseRepository.deleteById(id);
+        }else{
+            throw  new EntityNotFoundException("Expense is not present with this id : "+id);
+        }
+
+    }
+
 
 
 }
