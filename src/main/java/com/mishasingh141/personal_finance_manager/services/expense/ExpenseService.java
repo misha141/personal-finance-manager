@@ -9,4 +9,5 @@ public interface ExpenseService {
     Expense postExpense(ExpenseDTO expenseDTO);
     public List<Expense> getAllExpenses();
     public Expense getExpenseById(Long id);
+    public Expense updateExpense(Long id, ExpenseDTO expenseDTO);
 }
